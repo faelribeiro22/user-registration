@@ -1,15 +1,7 @@
 <script setup>
 import { store } from '../store/store.js'
 
-function onClickNext() {
-  console.log('heyyyy')
-  if (store.step < store.steps) {
-    store.fowardStep()
-  }
-}
-
 function onClickBack() {
-  console.log('heyyyy')
   if (store.step > 0) {
     store.backStep()
   }
@@ -19,7 +11,10 @@ function onClickBack() {
 <template>
   <div class="btn-wrapper">
     <button class="btn back" @click="onClickBack()">Voltar</button>
-    <button class="btn submit" @click="onClickNext()">Continuar</button>
+    <button class="btn submit" @click="$emit('clickNext')" v-if="store.step !== 4">
+      Continuar
+    </button>
+    <button class="btn submit" @click="$emit('create')" v-else>Cadastrar</button>
   </div>
 </template>
 

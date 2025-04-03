@@ -8,19 +8,43 @@ import WrapperButtons from './WrapperButtons.vue'
     <form @submit.prevent>
       <div class="input">
         <label for="mail">Nome</label>
-        <input type="text" id="name" name="name" />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          :value="store.userData.name"
+          @input="(event) => store.updateUserData('name', event.target.value)"
+        />
       </div>
       <div class="input">
         <label for="doc_number">CPF</label>
-        <input type="text" name="doc_number" id="doc_number" />
+        <input
+          type="text"
+          name="doc_number"
+          id="doc_number"
+          :value="store.userData.doc_number"
+          @input="(event) => store.updateUserData('doc_number', event.target.value)"
+        />
       </div>
       <div class="input">
         <label for="birth_date">Data de nascimento</label>
-        <input type="datetime-local" name="birth_date" id="birth_date" />
+        <input
+          type="datetime-local"
+          name="birth_date"
+          id="birth_date"
+          :value="store.userData.birth_date"
+          @input="(event) => store.updateUserData('birth_date', event.target.value)"
+        />
       </div>
       <div class="input">
         <label for="phone">Telefone</label>
-        <input type="text" name="phone" id="phone" />
+        <input
+          type="text"
+          name="phone"
+          id="phone"
+          :value="store.userData.phone"
+          @input="(event) => store.updateUserData('phone', event.target.phone)"
+        />
       </div>
       <wrapper-buttons />
     </form>

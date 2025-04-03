@@ -8,7 +8,13 @@ import WrapperButtons from './WrapperButtons.vue'
     <form @submit.prevent>
       <div class="input">
         <label for="password">Sua senha</label>
-        <input type="password" id="password" name="password" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          :value="store.userData.password"
+          @input="(event) => store.updateUserData('password', event.target.value)"
+        />
       </div>
       <div class="input">
         <label for="repeat_password">Repita sua senha</label>
