@@ -1,6 +1,7 @@
 <script setup>
 import { IsEmail } from '@/utils/IsEmail.js'
 import { store } from '../store/store.js'
+import InputForm from './InputForm.vue'
 
 function validEmail() {
   if (!IsEmail(store.userData.email)) {
@@ -15,18 +16,13 @@ function validEmail() {
 <template>
   <div class="wrapper">
     <form @submit.prevent>
-      <div class="input-mail" :class="{ 'mail-error': store.useDataFormErrors.email }">
-        <label for="mail">Endereço de email</label>
-        <input
-          type="email"
-          id="mail"
-          name="mail"
-          :class="{ error: store.useDataFormErrors.email }"
-          :value="store.userData.email"
-          @input="(event) => store.updateUserData('email', event.target.value)"
-        />
-        <p v-show="store.useDataFormErrors.email" class="mail-error">Digite um email válido</p>
-      </div>
+      <input-form
+        type="email"
+        label="Endereço de email"
+        msg-error="Digite um email válido"
+        name="email"
+        store-value="email"
+      />
       <div class="type-person">
         <div>
           <input type="radio" name="person_type" id="PF" value="PF" v-model="store.personType" />
@@ -46,18 +42,6 @@ function validEmail() {
 .wrapper {
   width: 900px;
 }
-.input-mail {
-  display: flex;
-  width: 30%;
-  flex-direction: column;
-}
-
-.input-mail input {
-  flex: 1;
-  border-radius: 4px;
-  line-height: 2rem;
-  margin-top: 5px;
-}
 
 .type-person {
   align-items: center;
@@ -74,13 +58,5 @@ function validEmail() {
   background-color: #ff9900;
   border-radius: 4px;
   color: #fff;
-}
-
-.mail-error input {
-  border-color: red;
-}
-
-.mail-error {
-  color: red;
 }
 </style>

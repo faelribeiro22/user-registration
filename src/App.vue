@@ -1,8 +1,7 @@
 <script setup>
 import StepsRegister from '@/components/StepsRegister.vue'
 import FormInitial from './components/FormInitial.vue'
-import FormPerson from './components/FormPerson.vue'
-import FormCompany from './components/FormCompany.vue'
+import FormInfos from './components/FormInfos.vue'
 import FormPassword from './components/FormPassword.vue'
 import FormCheckInformations from './components/FormCheckInformations.vue'
 import { store } from './store/store'
@@ -18,8 +17,7 @@ import { store } from './store/store'
 
     <main>
       <form-initial v-show="store.step === 1" />
-      <form-person v-if="store.step === 2 && store.personType === 'PF'" />
-      <form-company v-if="store.step === 2 && store.personType !== 'PF'" />
+      <form-infos v-if="store.step === 2" />
       <form-password v-if="store.step === 3" />
       <form-check-informations v-if="store.step === 4" />
     </main>

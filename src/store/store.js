@@ -1,14 +1,14 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-  step: 1,
+  step: 4,
   steps: 4,
   personType: 'PJ',
   userData: {
     name: '',
     email: '',
     doc_number: '',
-    birth_date: new Date(),
+    birth_date: null,
     phone: '',
     password: '',
   },
