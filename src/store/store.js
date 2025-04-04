@@ -1,9 +1,10 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-  step: 4,
+  step: 1,
   steps: 4,
-  personType: 'PJ',
+  personType: 'PF',
+  loading: false,
   userData: {
     name: '',
     email: '',
@@ -35,5 +36,8 @@ export const store = reactive({
     if (store.step > 1) {
       store.step--
     }
+  },
+  setLoading(value) {
+    store.loading = value
   },
 })

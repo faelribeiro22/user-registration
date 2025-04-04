@@ -1,6 +1,10 @@
 <script setup>
 import { store } from '../store/store.js'
 
+defineProps({
+  loading: Boolean,
+})
+
 function onClickBack() {
   if (store.step > 0) {
     store.backStep()
@@ -10,11 +14,13 @@ function onClickBack() {
 
 <template>
   <div class="btn-wrapper">
-    <button class="btn back" @click="onClickBack()">Voltar</button>
+    <button class="btn back" @click="onClickBack()" v-if="store.step !== 1">Voltar</button>
     <button class="btn submit" @click="$emit('clickNext')" v-if="store.step !== 4">
       Continuar
     </button>
-    <button class="btn submit" @click="$emit('create')" v-else>Cadastrar</button>
+    <button class="btn submit" @click="$emit('create')" v-if="store.step === 4" :disabled="loading">
+      {{ loading ? 'Cadastrando ...' : 'Cadastrar' }}
+    </button>
   </div>
 </template>
 
@@ -43,6 +49,6 @@ function onClickBack() {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  width: 30%;
+  width: 50%;
 }
 </style>
