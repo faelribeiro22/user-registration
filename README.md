@@ -1,35 +1,55 @@
 # user-registration-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Esse projeto utilizou Vue3, Vite e Express
 
-## Recommended IDE Setup
+## Versão node recomendada
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+v22.14.0
 
-## Customize configuration
+## Caso use o nvm para gerenciar versões do node execute
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+```sh
+nvm use
+```
 
-## Project Setup
+Com isso o nvm vai olhar o arquivo .nvmrc que contém a versão do node utilizada
+
+## Inicialização do projeto
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilação e carregamento rápido para desenvolvimento do front-end
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Para compilar para produção
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Lint com [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
+
+## Para executar o projeto com o servidor da api
+
+1. Executar o comando de build
+
+```sh
+npm run build
+```
+
+2. Executar o comando para rodar o projeto junto com o backend
+
+```sh
+npm run dev:server
+```
+
+3. Acessar a url http://localhost:3000/registration
