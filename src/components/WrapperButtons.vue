@@ -49,6 +49,6 @@ function onClickBack() {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  width: 50%;
+  width: 15rem;
 }
 </style>

@@ -3,6 +3,7 @@ import { validarCNPJ, validarCPF } from '@/utils/ValidDocNumber.js'
 import { store } from '../store/store.js'
 import WrapperButtons from './WrapperButtons.vue'
 import InputForm from './InputForm.vue'
+import RadioTypePerson from './RadioTypePerson.vue'
 import { computed, ref } from 'vue'
 import { IsEmail } from '@/utils/IsEmail.js'
 

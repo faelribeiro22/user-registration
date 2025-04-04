@@ -22,6 +22,6 @@ header {
   line-height: 1.5;
 }
 .wrapper {
-  width: 480px;
+  max-width: 480px;
 }
 </style>

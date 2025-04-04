@@ -28,7 +28,7 @@ defineProps({
 <style scoped>
 .input {
   display: flex;
-  width: 50%;
+  width: 15rem;
   flex-direction: column;
   border-radius: 4px;
   line-height: 2rem;

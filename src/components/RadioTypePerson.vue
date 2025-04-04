@@ -21,6 +21,6 @@ import { store } from '../store/store.js'
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  width: 270px;
+  width: 15rem;
 }
 </style>
